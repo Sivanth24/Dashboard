@@ -92,6 +92,7 @@ const navItems = [
 ];
 
 const Sidebar = ({
+  user,
   drawerWidth,
   isNonMobile,
   isSidebarOpen,
@@ -107,7 +108,7 @@ const Sidebar = ({
   }, [pathname]);
 
   return (
-    <Box component="nav" sx={{ overflow: "hidden" }}>
+    <Box component="nav">
       {isSidebarOpen && (
         <Drawer
           open={isSidebarOpen}
@@ -128,7 +129,13 @@ const Sidebar = ({
           <Box width="100%">
             <Box m="1.5rem 2rem 2rem 3rem">
               <FlexBetween color={theme.palette.secondary.main}>
-                <Box display="flex" alignItems="center" gap="0.5rem">
+                <Box
+                  width="100%"
+                  display="flex"
+                  alignItems="center"
+                  justifyContent="center"
+                  gap="0.5rem"
+                >
                   <Typography variant="h4" fontWeight="bold">
                     ECOMVISION
                   </Typography>
@@ -191,6 +198,43 @@ const Sidebar = ({
                 );
               })}
             </List>
+          </Box>
+
+          <Box position="relative" marginTop="4rem" bottom="2rem">
+            <Divider />
+            <FlexBetween textTransform="none" gap="1rem" m="1.5rem 2rem 0 3rem">
+              <Box
+                component="img"
+                alt="profile"
+                src={profileImage}
+                height="40px"
+                width="40px"
+                borderRadius="50%"
+                sx={{ objectFit: "cover" }}
+              />
+              <Box textAlign="left">
+                <Typography
+                  fontWeight="bold"
+                  fontSize="0.9rem"
+                  color={theme.palette.secondary[100]}
+                >
+                  {user.name}
+                </Typography>
+                <Typography
+                  fontSize="0.8rem"
+                  color={theme.palette.secondary[200]}
+                >
+                  {user.occupation}
+                </Typography>
+              </Box>
+              <SettingsOutlined
+                sx={{
+                  color: theme.palette.secondary[300],
+                  fontSize: "25px",
+                  cursor: "pointer",
+                }}
+              />
+            </FlexBetween>
           </Box>
         </Drawer>
       )}
