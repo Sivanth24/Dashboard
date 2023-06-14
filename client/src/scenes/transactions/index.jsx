@@ -54,8 +54,11 @@ const Transactions = () => {
   ];
 
   return (
-    <Box m="2rem 2.5rem" paddingBottom="2rem">
+    <Box m="1rem 2.5rem" paddingBottom="1rem">
+      {/* HEADER */}
       <Header title="TRANSACTIONS" subtitle="Entire list of transactions." />
+
+      {/* TRANSACTIONS TABLE */}
       <Box
         height="80vh"
         sx={{

@@ -117,6 +117,9 @@ const Sidebar = ({
           anchor="left"
           sx={{
             width: drawerWidth,
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
             "& .MuiDrawer-paper": {
               color: theme.palette.secondary[200],
               backgroundColor: theme.palette.background.alt,
@@ -150,7 +153,7 @@ const Sidebar = ({
                 )}
               </FlexBetween>
             </Box>
-            <List>
+            <List sx={{marginBottom: "25px"}}>
               {navItems.map(({ text, icon }) => {
                 if (!icon) {
                   return (
@@ -200,7 +203,7 @@ const Sidebar = ({
             </List>
           </Box>
 
-          <Box position="relative" marginTop="4rem" bottom="2rem">
+          <Box marginBottom="1.5rem">
             <Divider />
             <FlexBetween textTransform="none" gap="1rem" m="1.5rem 2rem 0 3rem">
               <Box
