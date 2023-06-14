@@ -90,11 +90,14 @@ const Products = () => {
   const isNonMobile = useMediaQuery("(min-width: 1000px)");
 
   return (
-    <Box m="1.5rem 2.5rem" paddingBottom="2rem">
+    <Box m="1rem 2.5rem" paddingBottom="1rem">
+      {/* HEADER */}
       <Header title="PRODUCTS" subtitle="See your list of products." />
+
+      {/* PRODUCTS DISPLAY */}
       {data || !isLoading ? (
         <Box
-          mt="20px"
+          mt="25px"
           display="grid"
           gridTemplateColumns="repeat(4, minmax(0, 1fr))"
           justifyContent="space-between"
@@ -104,7 +107,7 @@ const Products = () => {
             "& > div": { gridColumn: isNonMobile ? undefined : "span 4" },
           }}
         >
-          {data.map(
+          {data?.map(
             ({
               _id,
               name,

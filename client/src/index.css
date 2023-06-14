@@ -10,21 +10,23 @@ body,
 }
 
 ::-webkit-scrollbar {
-  width: 0;
+  width: 10px;
   height: 0;
 }
 
 /* Track */
-/* ::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
   background: #7a7f9d;
-} */
+  border-radius: 10px;
+}
 
 /* Handle */
-/* ::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
   background: #21295c;
-} */
+  border-radius: 10px;
+}
 
 /* Handle on Hover */
-/* ::-webkit-scrollbar-track:hover {
+::-webkit-scrollbar-track:hover {
   background: #21295c;
-} */
+}

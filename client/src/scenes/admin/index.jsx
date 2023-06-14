@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { Box, useTheme } from "@mui/material";
 import Header from "components/Header";
-import { useGetCustomersQuery } from "state/api";
+import { useGetAdminsQuery } from "state/api";
 import { DataGrid } from "@mui/x-data-grid";
 import CustomColumnMenu from "components/DataGridCustomColumnMenu";
 import DataGridCustomToolbar from "components/DataGridCustomToolbar";
 
-const Customers = () => {
+const Admin = () => {
   const theme = useTheme();
-  const { data, isLoading } = useGetCustomersQuery();
+  const { data, isLoading } = useGetAdminsQuery();
   const [page, setPage] = useState(0);
   const [pageSize, setPageSize] = useState(25);
 
@@ -56,9 +56,9 @@ const Customers = () => {
   return (
     <Box m="1rem 2.5rem" paddingBottom="1rem">
       {/* HEADER */}
-      <Header title="CUSTOMERS" subtitle="List of Customers." />
+      <Header title="ADMINS" subtitle="Managing admins and list of admins." />
 
-      {/* CUSTOMERS TABLE */}
+      {/* ADMIN TABLE */}
       <Box
         mt="25px"
         height="75vh"
@@ -107,4 +107,4 @@ const Customers = () => {
   );
 };
 
-export default Customers;
+export default Admin;
