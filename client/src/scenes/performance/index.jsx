@@ -11,8 +11,7 @@ const Performance = () => {
   const theme = useTheme();
   const userId = useSelector((state) => state.global.userId);
   const { data, isLoading } = useGetUserPerformanceQuery(userId);
-  const [page, setPage] = useState(0);
-  const [pageSize, setPageSize] = useState(25);
+  const [pageSize, setPageSize] = useState(10);
 
   const columns = [
     {
@@ -80,11 +79,8 @@ const Performance = () => {
           getRowId={(row) => row._id}
           rows={(data && data.sales) || []}
           columns={columns}
-          rowsPerPageOptions={[25, 50, 100]}
-          pagination
-          page={page}
+          rowsPerPageOptions={[10, 20, 30]}
           pageSize={pageSize}
-          onPageChange={(newPage) => setPage(newPage)}
           onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
           components={{
             ColumnMenu: CustomColumnMenu,

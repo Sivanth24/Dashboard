@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Box,
   useTheme,
@@ -25,6 +25,7 @@ const Dashboard = () => {
   const theme = useTheme();
   const isNonMediumScreens = useMediaQuery("(min-width: 1200px)");
   const { data, isLoading } = useGetDashboardQuery();
+  const [pageSize, setPageSize] = useState(25);
 
   const columns = [
     {
@@ -174,7 +175,9 @@ const Dashboard = () => {
             getRowId={(row) => row._id}
             rows={(data && data.transactions) || []}
             columns={columns}
-            pageSize="25"
+            pageSize={pageSize}
+            rowsPerPageOptions={[10, 25, 50]}
+            onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
           />
         </Box>
         <Box
@@ -188,8 +191,13 @@ const Dashboard = () => {
             Sales By category
           </Typography>
           <BreakdownChart isDashboard={true} />
-          <Typography padding="0 0.6rem" fontSize="0.8rem" sx={{color: theme.palette.secondary[200]}}>
-            Breakdown of total sales by category for this year and total revenue made this year.
+          <Typography
+            padding="0 0.6rem"
+            fontSize="0.8rem"
+            sx={{ color: theme.palette.secondary[200] }}
+          >
+            Breakdown of total sales by category for this year and total revenue
+            made this year.
           </Typography>
         </Box>
       </Box>

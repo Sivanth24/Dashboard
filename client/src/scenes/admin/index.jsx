@@ -9,7 +9,6 @@ import DataGridCustomToolbar from "components/DataGridCustomToolbar";
 const Admin = () => {
   const theme = useTheme();
   const { data, isLoading } = useGetAdminsQuery();
-  const [page, setPage] = useState(0);
   const [pageSize, setPageSize] = useState(25);
 
   const columns = [
@@ -89,10 +88,7 @@ const Admin = () => {
           rows={data || []}
           columns={columns}
           rowsPerPageOptions={[25, 50, 100]}
-          pagination
-          page={page}
           pageSize={pageSize}
-          onPageChange={(newPage) => setPage(newPage)}
           onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
           components={{
             ColumnMenu: CustomColumnMenu,
