@@ -71,6 +71,7 @@ const Dashboard = () => {
               fontSize: "14px",
               fontWeight: "bold",
               padding: "10px 20px",
+              ":hover": {backgroundColor: theme.palette.secondary[400]},
             }}
           >
             <DownloadOutlined sx={{ mr: "10px" }} />
@@ -158,7 +159,7 @@ const Dashboard = () => {
               borderBottom: "none",
             },
             "& .MuiDataGrid-virtualScroller": {
-              backgroundColor: theme.palette.background.alt,
+              backgroundColor: theme.palette.primary.light,
             },
             "& .MuiDataGrid-footerContainer": {
               backgroundColor: theme.palette.background.alt,

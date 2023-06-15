@@ -153,7 +153,7 @@ const Sidebar = ({
                 )}
               </FlexBetween>
             </Box>
-            <List sx={{marginBottom: "25px"}}>
+            <List sx={{ marginBottom: "25px" }}>
               {navItems.map(({ text, icon }) => {
                 if (!icon) {
                   return (
@@ -179,6 +179,12 @@ const Sidebar = ({
                           active === lcText
                             ? theme.palette.primary[600]
                             : theme.palette.secondary[100],
+                        ":hover": {
+                          backgroundColor:
+                            active === lcText
+                              ? theme.palette.secondary[400]
+                              : theme.palette.primary[400],
+                        },
                       }}
                     >
                       <ListItemIcon
