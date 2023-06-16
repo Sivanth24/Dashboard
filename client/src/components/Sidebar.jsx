@@ -140,7 +140,7 @@ const Sidebar = ({
                   gap="0.5rem"
                 >
                   <Typography variant="h4" fontWeight="bold">
-                    ECOMVISION
+                    DASHBOARD
                   </Typography>
                 </Box>
                 {!isNonMobile && (
