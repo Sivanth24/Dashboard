@@ -59,11 +59,12 @@ const Geography = () => {
             }}
             features={geoData?.features}
             margin={{ top: 0, right: 0, bottom: 0, left: -50 }}
+            colors="RdYlBu"
             domain={[0, 60]}
             unknownColor="#666666"
             label="properties.name"
             valueFormat=".2s"
-            projectionScale={120}
+            projectionScale={140}
             projectionTranslation={[0.48, 0.7]}
             projectionRotation={[0, 0, 0]}
             borderWidth={1.3}

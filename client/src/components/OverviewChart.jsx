@@ -80,6 +80,7 @@ const OverviewChart = ({ isDashboard = false, view }) => {
           },
         },
       }}
+      colors={{ datum: "color" }}
       margin={
         isDashboard
           ? { top: 20, right: 40, bottom: 50, left: 70 }

@@ -177,13 +177,13 @@ const Sidebar = ({
                             : "transparent",
                         color:
                           active === lcText
-                            ? theme.palette.primary[600]
+                            ? theme.palette.background.alt
                             : theme.palette.secondary[100],
                         ":hover": {
                           backgroundColor:
                             active === lcText
                               ? theme.palette.secondary[400]
-                              : theme.palette.primary[400],
+                              : theme.palette.primary.alt,
                         },
                       }}
                     >
@@ -192,7 +192,7 @@ const Sidebar = ({
                           ml: "2rem",
                           color:
                             active === lcText
-                              ? theme.palette.primary[600]
+                              ? theme.palette.background.alt
                               : theme.palette.secondary[200],
                         }}
                       >

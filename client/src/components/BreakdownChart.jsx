@@ -8,10 +8,10 @@ const BreakdownChart = ({ isDashboard = false }) => {
   const theme = useTheme();
 
   const colors = [
-    theme.palette.secondary[200],
     theme.palette.secondary[300],
     theme.palette.secondary[500],
-    theme.palette.secondary[400],
+    theme.palette.secondary[700],
+    theme.palette.secondary[600],
   ];
   const formattedData =
     data?.hasOwnProperty("salesByCategory") &&
