@@ -8,10 +8,10 @@ const BreakdownChart = ({ isDashboard = false }) => {
   const theme = useTheme();
 
   const colors = [
-    theme.palette.secondary[500],
-    theme.palette.secondary[300],
     theme.palette.secondary[300],
     theme.palette.secondary[500],
+    theme.palette.secondary[700],
+    theme.palette.secondary[600],
   ];
   const formattedData =
     data?.hasOwnProperty("salesByCategory") &&
@@ -73,6 +73,8 @@ const BreakdownChart = ({ isDashboard = false }) => {
         }
         sortByValue={true}
         innerRadius={0.45}
+        padAngle={0.7}
+        cornerRadius={3}
         activeOuterRadiusOffset={8}
         borderWidth={1}
         borderColor={{
@@ -86,7 +88,7 @@ const BreakdownChart = ({ isDashboard = false }) => {
         arcLabelsSkipAngle={10}
         arcLabelsTextColor={{
           from: "color",
-          modifiers: [["darker", 2]],
+          modifiers: [["darker", 3]],
         }}
         legends={[
           {
@@ -95,19 +97,19 @@ const BreakdownChart = ({ isDashboard = false }) => {
             justify: false,
             translateX: isDashboard ? 20 : 0,
             translateY: isDashboard ? 50 : 56,
-            itemsSpacing: 15,
-            itemWidth: 85,
+            itemsSpacing: isDashboard ? 10 : 15,
+            itemWidth: isDashboard ? 70 : 85,
             itemHeight: 18,
             itemTextColor: "#999",
             itemDirection: "left-to-right",
             itemOpacity: 1,
-            symbolSize: 18,
+            symbolSize: isDashboard ? 11 : 18,
             symbolShape: "circle",
             effects: [
               {
                 on: "hover",
                 style: {
-                  itemTextColor: theme.palette.primary[500],
+                  itemTextColor: theme.palette.primary[100],
                 },
               },
             ],

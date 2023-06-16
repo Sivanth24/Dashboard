@@ -1,47 +1,45 @@
 // color design tokens export
 export const tokensDark = {
   grey: {
-    0: "#ffffff", // manually adjusted
-    10: "#f6f6f6", // manually adjusted
-    50: "#f0f0f0", // manually adjusted
-    100: "#e0e0e0",
-    200: "#c2c2c2",
-    300: "#a3a3a3",
-    400: "#858585",
-    500: "#666666",
-    600: "#525252",
-    700: "#3d3d3d",
-    800: "#292929",
-    900: "#141414",
-    1000: "#000000", // manually adjusted
+    0: "#ffffff",
+    10: "#f6f6f6",
+    50: "#f0f0f0",
+    100: "#f6f6f6",
+    200: "#ededed",
+    300: "#e3e3e3",
+    400: "#dadada",
+    500: "#d1d1d1",
+    600: "#a7a7a7",
+    700: "#7d7d7d",
+    800: "#545454",
+    900: "#2a2a2a",
   },
   primary: {
-    // blue
-    100: "#d3d4de",
-    200: "#a6a9be",
-    300: "#7a7f9d",
-    400: "#4d547d",
-    500: "#21295c",
-    600: "#191F45", // manually adjusted
-    700: "#141937",
-    800: "#0d1025",
-    900: "#070812",
+    // black
+    100: "#d3d3d3",
+    200: "#a6a6a6",
+    300: "#7a7a7a",
+    400: "#4d4d4d",
+    500: "#212121",
+    600: "#1a1a1a",
+    700: "#141414",
+    800: "#0d0d0d",
+    900: "#070707",
   },
   secondary: {
-    // yellow
-    50: "#f0f0f0", // manually adjusted
-    100: "#fff6e0",
-    200: "#ffedc2",
-    300: "#ffe3a3",
-    400: "#ffda85",
-    500: "#ffd166",
-    600: "#cca752",
-    700: "#997d3d",
-    800: "#665429",
-    900: "#332a14",
+    // tiffany blue
+    100: "#cefaf9",
+    200: "#9ef5f2",
+    300: "#6df0ec",
+    400: "#3debe5",
+    500: "#0ce6df",
+    600: "#0ab8b2",
+    700: "#078a86",
+    800: "#055c59",
+    900: "#022e2d",
   },
 };
-  
+
 // function that reverses the color palette
 function reverseTokens(tokensDark) {
   const reversedTokens = {};
@@ -71,6 +69,7 @@ export const themeSettings = (mode) => {
               ...tokensDark.primary,
               main: tokensDark.primary[400],
               light: tokensDark.primary[400],
+              alt: tokensDark.primary[400]
             },
             secondary: {
               ...tokensDark.secondary,
@@ -91,6 +90,7 @@ export const themeSettings = (mode) => {
               ...tokensLight.primary,
               main: tokensDark.grey[50],
               light: tokensDark.grey[100],
+              alt: tokensDark.primary[100]
             },
             secondary: {
               ...tokensLight.secondary,
